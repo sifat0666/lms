@@ -16,8 +16,10 @@ const calender = () => {
   return (
     <div className="h-screen flex flex-col">
       <CalenderHeader />
-      <Sidebar />
-      <Month month={currentMonth} />
+      <div className="flex flex-1">
+        <Sidebar />
+        <Month month={currentMonth} />
+      </div>
     </div>
   );
 };

@@ -25,8 +25,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <ContextWrapper>
           <Toaster />
-          <Navbar />
-          <Component {...pageProps} />
+          <Navbar>
+            <Component {...pageProps} />
+          </Navbar>
         </ContextWrapper>
       </QueryClientProvider>
     </div>

@@ -8,6 +8,7 @@ generator client {
 enum Role {
   student
   teacher
+  admin
 }
 
 datasource db {
@@ -23,4 +24,23 @@ model User {
   type     String?
   password String?
   role     Role?   @default(student)
+}
+
+model Homework {
+  id          Int       @id @default(autoincrement())
+  subject     String
+  description String
+  teacher     Teacher[]
+}
+
+model Teacher {
+  id         String    @id @default(cuid())
+  email      String    @unique
+  name       String?
+  picture    String?
+  type       String?
+  password   String?
+  role       Role?     @default(teacher)
+  Homework   Homework? @relation(fields: [homeworkId], references: [id])
+  homeworkId Int?
 }

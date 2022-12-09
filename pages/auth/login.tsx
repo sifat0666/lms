@@ -53,6 +53,7 @@ const register = () => {
       }
       if (data.data.message === "success") {
         router.push("/");
+        setTimeout(() => router.reload(), 1);
       }
     },
   });
@@ -70,7 +71,7 @@ const register = () => {
   };
 
   return (
-    <div className="flex items-center justify-center pt-8 w-full">
+    <div className="flex flex-col items-center justify-center pt-8 w-full">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="card bg-base-100 shadow-xl w-96 h-fit"

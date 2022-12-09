@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import router from "next/router";
 import toast from "react-hot-toast";
@@ -17,4 +18,12 @@ export const createUser = (value: any) => {
       }
     })
     .then((err) => console.log("err", err));
+};
+
+export const getUser = () => {
+  const { data } = useQuery(["me"], () =>
+    fetch("/api/user").then((res) => res.json())
+  );
+
+  return data;
 };
