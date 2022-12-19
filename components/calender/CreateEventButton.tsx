@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import GlobalContext from "../../context/GlobalContext";
 
 const CreateEventButton = () => {
-  return <div className="my-2 mb-4 btn btn-primary">Create Event</div>;
+  const { setShowEventModal } = useContext(GlobalContext);
+
+  return (
+    <div onClick={() => setShowEventModal(true)} className="btn btn-primary ">
+      Create Event
+    </div>
+  );
 };
 
 export default CreateEventButton;

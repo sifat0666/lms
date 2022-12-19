@@ -13,6 +13,13 @@ module.exports = {
   },
   plugins: [require("daisyui"), require("@headlessui/tailwindcss")],
   daisyui: {
-    // themes: false,
+    styled: true,
+    themes: false,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "dark",
   },
 };

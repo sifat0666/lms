@@ -1,22 +1,19 @@
+import dayjs from "dayjs";
 import { createContext } from "react";
 
 const GlobalContext = createContext({
   monthIndex: 0,
-  setMonthIndex: (index: any) => {},
+  setMonthIndex: (index: number) => {},
+  setSmallCalendarMonth: (index: number) => {},
   smallCalendarMonth: 0,
-  setSmallCalendarMonth: (index: any) => {},
-  daySelected: null,
-  setDaySelected: (day: any) => {},
+  daySelected: dayjs(),
+  setDaySelected: (index: dayjs.Dayjs) => {},
   showEventModal: false,
-  setShowEventModal: () => {},
+  setShowEventModal: (show: boolean) => {},
   dispatchCalEvent: ({ type, payload }: any) => {},
   savedEvents: [],
   selectedEvent: null,
-  setSelectedEvent: () => {},
-  setLabels: () => {},
-  labels: [],
-  updateLabel: () => {},
-  filteredEvents: [],
+  setSelectedEvent: (e: any) => {},
 });
 
 export default GlobalContext;
