@@ -60,7 +60,7 @@ const register = () => {
       }
       if (data.data.message === "success") {
         toast.success("user Created successfully");
-        router.push("/");
+        // router.push("/");
       }
     },
   });

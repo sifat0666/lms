@@ -52,7 +52,7 @@ const register = () => {
         toast.error("incorrect password");
       }
       if (data.data.message === "success") {
-        router.push("/");
+        router.push("/calender");
         setTimeout(() => router.reload(), 1);
       }
     },
